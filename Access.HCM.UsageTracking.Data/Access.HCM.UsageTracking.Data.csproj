@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Access.Data\Access.Data.csproj" />
+    <ProjectReference Include="..\Access.HCM.UsageTracking.Model\Access.HCM.UsageTracking.Model.csproj" />
+  </ItemGroup>
+
+</Project>
