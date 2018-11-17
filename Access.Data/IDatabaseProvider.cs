@@ -6,6 +6,6 @@ namespace Access.Data
 {
     public interface IDatabaseProvider
     {
-        Task<bool> CallStoredProcedure(string schema, string procedureName, object parameters);
+        void CallStoredProcedure(string schema, string procedureName, object parameters);
     }
 }

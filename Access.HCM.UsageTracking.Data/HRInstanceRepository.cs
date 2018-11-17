@@ -11,9 +11,9 @@ namespace Access.HCM.UsageTracking.Data
         public HRInstanceRepository(IDatabaseProvider databaseProvider) {
             _databaseProvider = databaseProvider;
         }
-        public async Task<bool> SaveInstanceRecord(HRInstanceDataModel dataModel)
+        public void SaveInstanceRecord(HRInstanceDataModel dataModel)
         {
-            await _databaseProvider.CallStoredProcedure("HR", "SaveInstanceRecord", new
+            _databaseProvider.CallStoredProcedure("HR", "SaveInstanceRecord", new
                 {
                     dataModel.Identifier,
                     dataModel.LicenseGuid,
@@ -26,7 +26,6 @@ namespace Access.HCM.UsageTracking.Data
                     dataModel.LastAuditDate,
                     dataModel.LatestLoggedInDate
                 });
-            return true;
         }
     }
 }

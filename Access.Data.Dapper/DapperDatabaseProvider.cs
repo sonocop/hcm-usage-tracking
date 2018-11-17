@@ -14,15 +14,14 @@ namespace Access.Data.Dapper
         public DapperDatabaseProvider(IConfiguration config) {
             _config = config;
         }
-        public async Task<bool> CallStoredProcedure(string schema, string procedureName, object parameters)
+        public void CallStoredProcedure(string schema, string procedureName, object parameters)
         {
             using (var connection = new SqlConnection(_config.GetConnectionString("Default")))
             {
-                await connection.OpenAsync();
-                await connection.QueryAsync("[" + schema + "].[" + procedureName + "]",
+                connection.Open();
+                connection.Query("[" + schema + "].[" + procedureName + "]",
                     param: parameters,
                     commandType: CommandType.StoredProcedure);
-                return true;
             }
         }
     }

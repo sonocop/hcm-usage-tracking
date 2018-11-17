@@ -12,9 +12,9 @@ namespace Access.HCM.UsageTracking.Logic
         public HRInstanceLogic(IHRInstanceRepository hRInstanceRepository) {
             _hRInstanceRepository = hRInstanceRepository;
         }
-        public async Task<bool> SaveInstanceRecord(HRInstanceViewModel instance)
+        public void SaveInstanceRecord(HRInstanceViewModel instance)
         {
-            await _hRInstanceRepository.SaveInstanceRecord(new HRInstanceDataModel()
+            _hRInstanceRepository.SaveInstanceRecord(new HRInstanceDataModel()
             {
                 Identifier = instance.Identifier,
                 LicenseGuid = instance.LicenseGuid,
@@ -27,7 +27,6 @@ namespace Access.HCM.UsageTracking.Logic
                 LastAuditDate = instance.LastAuditDate,
                 LatestLoggedInDate = instance.LatestLoggedInDate
             });
-            return true;
         }
     }
 }

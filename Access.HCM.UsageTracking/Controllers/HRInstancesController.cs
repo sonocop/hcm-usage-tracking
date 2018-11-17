@@ -25,9 +25,9 @@ namespace Access.HCM.UsageTracking.Controllers
         }
         // POST: api/v1/HRInstances
         [HttpPost]
-        public async void Post([FromBody] HRInstanceViewModel instance)
+        public void Post([FromBody] HRInstanceViewModel instance)
         {
-            await _hRInstanceLogic.SaveInstanceRecord(instance);
+            _hRInstanceLogic.SaveInstanceRecord(instance);
         }
     }
 }

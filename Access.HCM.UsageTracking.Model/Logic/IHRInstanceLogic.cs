@@ -8,6 +8,6 @@ namespace Access.HCM.UsageTracking.Model.Logic
 {
     public interface IHRInstanceLogic
     {
-        Task<bool> SaveInstanceRecord(HRInstanceViewModel instance);
+        void SaveInstanceRecord(HRInstanceViewModel instance);
     }
 }

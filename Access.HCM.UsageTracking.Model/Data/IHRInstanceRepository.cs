@@ -7,6 +7,6 @@ namespace Access.HCM.UsageTracking.Model.Data
 {
     public interface IHRInstanceRepository
     {
-        Task<bool> SaveInstanceRecord(HRInstanceDataModel dataModel);
+        void SaveInstanceRecord(HRInstanceDataModel dataModel);
     }
 }
