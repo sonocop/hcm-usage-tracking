@@ -16,7 +16,7 @@ namespace Access.Data.Dapper
         }
         public void CallStoredProcedure(string schema, string procedureName, object parameters)
         {
-            using (var connection = new SqlConnection(_config.GetConnectionString("Default")))
+            using (var connection = new SqlConnection(_config.GetConnectionString("defaultConnection")))
             {
                 connection.Open();
                 connection.Query("[" + schema + "].[" + procedureName + "]",
