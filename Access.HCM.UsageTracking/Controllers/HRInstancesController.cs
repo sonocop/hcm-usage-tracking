@@ -18,12 +18,6 @@ namespace Access.HCM.UsageTracking.Controllers
             _hRInstanceLogic = hRInstanceLogic;
         }
         // POST: api/v1/HRInstances
-        [HttpGet]
-        public int Get()
-        {
-            return 4; 
-        }
-        // POST: api/v1/HRInstances
         [HttpPost]
         public void Post([FromBody] HRInstanceViewModel instance)
         {
